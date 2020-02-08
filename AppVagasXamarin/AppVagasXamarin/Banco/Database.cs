@@ -4,6 +4,7 @@ using System.Text;
 using SQLite;
 using AppVagasXamarin.Modelos;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace AppVagasXamarin.Banco
 {
@@ -20,27 +21,32 @@ namespace AppVagasXamarin.Banco
             string caminho = dep.ObterCaminho("database.sqlite");//Caminho da conexão
 
             _conexao = new SQLiteConnection(caminho);//conexao do banco 
+            _conexao.CreateTable<Vaga>();
         }
-        
+
         public List<Vaga> Consultar()
         {
-            return null;
+            return _conexao.Table<Vaga>().ToList();
+        }
+        public List<Vaga> Pesquisa(string palavra)
+        {
+            return _conexao.Table<Vaga>().Where(a => a.NomeVaga.Contains(palavra)).ToList();
         }
         public Vaga ObterVagaId(int id)
         {
-            return null;
+            return _conexao.Table<Vaga>().Where(a => a.Id == id).FirstOrDefault();
         }
         public void cadastro(Vaga vaga)
         {
-
+            _conexao.Insert(vaga);
         }
         public void Atualizacao(Vaga vaga)
         {
-
+            _conexao.Update(vaga);
         }
-        public void Exclusao(int id)
+        public void Exclusao(Vaga vaga)
         {
-
+            _conexao.Delete(vaga);
         }
     }
 }
