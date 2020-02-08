@@ -10,7 +10,7 @@ namespace AppVagasXamarin
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new AppVagasXamarin.Paginas.ConsultaVagas());
         }
 
         protected override void OnStart()
