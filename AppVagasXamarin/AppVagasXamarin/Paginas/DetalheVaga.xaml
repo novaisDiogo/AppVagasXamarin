@@ -7,15 +7,36 @@
              x:Class="AppVagasXamarin.Paginas.DetalheVaga">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding NomaVaga}" />
-            <Label Text="{Binding Empresa}" />
-            <Label Text="{Binding Quantidade}" />
-            <Label Text="{Binding Cidade}" />
-            <Label Text="{Binding Salario}" />
-            <Label Text="{Binding Descricao}" />
-            <Label Text="{Binding TipoContratacao}" />
-            <Label Text="{Binding Telefone}" />
-            <Label Text="{Binding Email}" />
+            <Label Text="{Binding NomeVaga}" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+            <Label Text="{Binding Empresa}" FontSize="10" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Gray"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Quantidade de vagas: "/>
+                <Label Text="{Binding Quantidade}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Cidade: "/>
+                <Label Text="{Binding Cidade}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Salario: "/>
+                <Label Text="{Binding Salario}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Requisitos: "/>
+                <Label Text="{Binding Descricao}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Tipo Contratação: "/>
+                <Label Text="{Binding TipoContratacao}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Telefone: "/>
+                <Label Text="{Binding Telefone}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Email: "/>
+                <Label Text="{Binding Email}" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

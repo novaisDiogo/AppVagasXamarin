@@ -36,7 +36,7 @@ namespace AppVagasXamarin.Banco
         {
             return _conexao.Table<Vaga>().Where(a => a.Id == id).FirstOrDefault();
         }
-        public void cadastro(Vaga vaga)
+        public void Cadastro(Vaga vaga)
         {
             _conexao.Insert(vaga);
         }

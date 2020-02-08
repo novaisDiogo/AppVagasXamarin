@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppVagasXamarin.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,11 @@ namespace AppVagasXamarin.Paginas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetalheVaga : ContentPage
     {
-        public DetalheVaga()
+        public DetalheVaga(Vaga vaga)
         {
             InitializeComponent();
+
+            BindingContext = vaga;
         }
     }
 }
